@@ -20,7 +20,7 @@ initial begin
     // $stop;
 
     #1;
-    for (k = 0; k < 200000; k = k + 1) begin
+    for (k = 0; k < 100000; k = k + 1) begin
         clock = 1; #5;
         clock = 0; #5;
     end

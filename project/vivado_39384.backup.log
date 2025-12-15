@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Mon Dec 15 20:43:00 2025
-# Process ID: 39284
+# Start of session at: Mon Dec 15 20:41:36 2025
+# Process ID: 39384
 # Current directory: E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/project
 # Command line: vivado.exe -mode batch -source run.tcl
 # Log file: E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/project/vivado.log
@@ -22,7 +22,47 @@ INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
 INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/project/project.sim/sim_1/behav/xsim'
 "xvlog --incr --relax -prj mips_tb_vlog.prj"
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/BECtrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BECtrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/Comp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Comp
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/Ctrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Ctrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/DM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DM_4k
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/DMExt.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DMExt
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/Ext.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Ext
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/Hazard.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Hazard
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/IM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IM_2k
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/MUX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX2
+INFO: [VRFC 10-311] analyzing module MUX3
+INFO: [VRFC 10-311] analyzing module MUX4
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/NPC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NPC
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/RegD.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegD
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/RegE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegE
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/RegFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/RegM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegM
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/RegW.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegW
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/StartCtrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module StartCtrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/TopLevel.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TopLevel
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/project/project.sim/sim_1/behav/xsim'
 Vivado Simulator 2018.3
@@ -31,7 +71,38 @@ Running: D:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto e6f7202c58
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/project/project.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_MDU_sv
+Compiling module xil_defaultlib.Hazard
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.IM_2k
+Compiling module xil_defaultlib.RegD
+Compiling module xil_defaultlib.Ctrl
+Compiling module xil_defaultlib.RegFile
+Compiling module xil_defaultlib.MUX4
+Compiling module xil_defaultlib.Comp
+Compiling module xil_defaultlib.Ext
+Compiling module xil_defaultlib.NPC
+Compiling module xil_defaultlib.StartCtrl
+Compiling module xil_defaultlib.RegE
+Compiling module xil_defaultlib.MUX3
+Compiling module xil_defaultlib.MUX2
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.MultiplicationDivisionUnit
+Compiling module xil_defaultlib.MUX2(WIDTH=5)
+Compiling module xil_defaultlib.RegM
+Compiling module xil_defaultlib.BECtrl
+Compiling module xil_defaultlib.DM_4k
+Compiling module xil_defaultlib.RegW
+Compiling module xil_defaultlib.DMExt
+Compiling module xil_defaultlib.MIPS
+Compiling module xil_defaultlib.TopLevel
+Compiling module xil_defaultlib.mips_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot mips_tb_behav
 INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
 INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/project/project.sim/sim_1/behav/xsim'
@@ -110,7 +181,7 @@ WARNING: Too many words specified in data file E:/Code/CPU_Design/HFUT_2020_MIPS
 @00003108: $ 0 <= 0000612b
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'mips_tb_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 336.730 ; gain = 15.832
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 337.945 ; gain = 16.363
 # run all
 @00003110: $ 7 <= aae6781b
 @00003114: $19 <= 40100702
@@ -71255,4 +71326,4 @@ launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): 
 @000030c0: *00000000 <= 58c3bbf4
 $finish called at time : 1000005 ns : File "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/MIPS_TB.v" Line 29
 # exit
-INFO: [Common 17-206] Exiting Vivado at Mon Dec 15 20:43:16 2025...
+INFO: [Common 17-206] Exiting Vivado at Mon Dec 15 20:41:52 2025...

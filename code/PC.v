@@ -6,48 +6,55 @@ module PC(
   );
   
   reg JumpPending;        // 标记是否需要在下个周期跳转/分支（延迟槽）
+  reg JumpHold;           // 防止同一条跳转指令在 ID 停留时重复触发
   reg [31:0] JumpTarget;  // 已计算好的跳转/分支目标地址
   
   initial
   begin
     PCF <= 32'h00003000;
     PCPlus4F <= 32'h00003004;
+    JumpPending <= 1'b0;
+    JumpHold    <= 1'b0;
+    JumpTarget  <= 32'b0;
   end
   
   always @(posedge clk) begin
-    // 预先缓存一次跳转请求，避免 En=0 时丢失
-    // 优先级：rst > 执行跳转 > 缓存跳转请求 > 顺序执行/停顿
+    // 优先级：rst > 完成延迟槽后的跳转（需要 En=1）> 记录跳转请求 > 顺序执行/停顿
     if (rst) begin
       PCF         <= 32'h00003000;
       PCPlus4F    <= 32'h00003004;
       JumpPending <= 1'b0;
+      JumpHold    <= 1'b0;
       JumpTarget  <= 32'b0;
     end
-    else if (JumpPending) begin
-      // 已经经历过 1 条延迟槽，本周期跳到目标
+    // 跳转执行：只在流水允许前进 (En=1) 且已经经历过 1 条延迟槽时
+    else if (JumpPending && En) begin
       PCF         <= JumpTarget;
       PCPlus4F    <= JumpTarget + 4;
-      JumpPending <= 1'b0;        // 跳一次就清空，固定 1 条延迟槽
+      JumpPending <= 1'b0;     // 固定 1 条延迟槽
+      JumpHold    <= 1'b1;     // 标记该跳转已服务
       JumpTarget  <= 32'b0;
     end
     else begin
       // 默认保持
       PCF         <= PCF;
       PCPlus4F    <= PCPlus4F;
-      JumpPending <= JumpPending;
-      JumpTarget  <= JumpTarget;
 
-      // 若检测到跳转/分支，先缓存目标（即便 En=0 也不丢）
-      if (IsJBrD && !JumpPending) begin
+      // 记录新的跳转请求（仅在未服务过且未在等待中）
+      if (IsJBrD && !JumpHold && !JumpPending) begin
         JumpPending <= 1'b1;
         JumpTarget  <= NPCD;
       end
 
-      // 只有在未处于 JumpPending 状态且允许前进时才顺序推进 PC
+      // 顺序推进 PC：需要 En=1 且当前没有等待跳转
       if (En && !JumpPending) begin
         PCF      <= PCF + 4;
         PCPlus4F <= PCF + 8;
       end
+
+      // 当 ID 不再是跳转/分支指令时，允许下一条跳转再次触发
+      if (!IsJBrD)
+        JumpHold <= 1'b0;
     end
   end
 endmodule
