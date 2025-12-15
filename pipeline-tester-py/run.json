@@ -1,0 +1,10 @@
+{
+    "compiler": "vivado",
+    "vivado_path": "D:\\Xilinx\\Vivado\\2018.3\\bin\\vivado.bat",
+    "iverilog_path": "iverilog",
+    "vvp_path": "vvp",
+    "test_bench_only": false,
+    "mars_run_params": ["nc","50000","ae2","mc","CompactDataAtZero","db"],
+    "iverilog_params": [],
+    "im_length": 1024
+}
