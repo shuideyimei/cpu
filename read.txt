@@ -1,0 +1,60 @@
+# 流水线 CPU 设计
+## 目标
+设计并实现五级流水线 MIPS CPU，支持以下 MIPS 指令：
+addu（寄存器加法）、subu（寄存器减法）、ori（立即数或）、lw（对齐加载）、sw（对齐存储）、beq（相等时跳转）、lui（加载立即数到高位）、jal（函数调用）、jr（寄存器跳转）、j（跳转）
+
+附加：
+syscall：执行到 syscall 指令时使用 $finish 终止仿真
+
+在流水线 CPU 中，需要处理分支延迟槽（Branch Delay Slot）。需在 Mars 中打开该选项：Settings - Delayed branching
+
+## 说明
+1. 需实现五级流水线（IF-ID-EX-MEM-WB），并实现完整的旁路转发。执行同一程序时，实现所用时钟周期应仅与参考时限相差常数级别。
+2. 每一级流水线的结果，需在每个时钟周期结束时，储存在这一级的流水线寄存器中。即每一时刻，流水线寄存器储存了该级流水线上个周期的结果。除该级流水线上个周期的结果外，为方便调试和检查，应额外存储其上个周期所运行的指令以及所处的 PC 值。
+3. 使用旁路转发处理冲突时，应转发来自某一级流水线寄存器的值，而非具体元件的值。
+4. 建议实现一种通用的模式来处理「旁路转发」与「阻塞」，避免枚举具体的每一种转发与阻塞情况（后者会大大增加代码复杂度）。
+5. 建议将控制信号封装为 struct，并沿着流水线传递，同时将每一级流水线寄存器封装为 struct。需牢记阻塞赋值（=）与非阻塞赋值（<=）的特性。
+
+## 测试
+为确保能检查出所有错误并方便定位出错位置，需记录每次寄存器写入与内存写入。
+1. 写入寄存器时添加如下 $display 语句（需将该指令所在的 PC 传入通用寄存器组件）：
+$display("@%h: $%d <= %h", programCounter, registerId, dataWrite);
+2. 写入内存时添加如下 $display 语句（其中 address 为完整的 32 位地址；需将该指令所在的 PC 传入数据存储器组件）：
+$display("@%h: *%h <= %h", programCounter, address, dataWrite);
+
+执行时，Vivado 控制台或其它仿真工具的输出中应含有如下内容：
+@00003000: $31 <= 00003000
+@00003004: $ 2 <= 00000000
+@00003008: $ 2 <= 00000000
+@0000300c: $ 0 <= 00030000
+@00003010: $ 0 <= 00000000
+@00003014: $ 1 <= 00040000
+@00003018: *00000004 <= 00003000
+@0000301c: $ 1 <= 00006000
+@00003020: *00000008 <= 00003000
+@00003024: $ 1 <= 00003000
+
+作为参考，可下载带有输出信息的 Mars（请勿使用该版本 Mars 的图形界面），并使用命令行执行汇编程序：
+Menci/pipeline-tester:Mars.jar java -jar Mars.jar db nc 500 ae2 mc CompactDataAtZero <你的汇编程序>.asm
+
+Mars 命令行参数说明如下表：
+| Flag | Description |
+| --- | --- |
+| db | MIPS delayed branching is enabled. |
+| nc | copyright notice will not be displayed. Useful if redirecting or piping program output. |
+| （无标识参数） | 其中 n 为整数，表示要模拟的最大执行步骤数。若为 0、负数或未指定，则无最大值限制。 |
+| ae | 若发生汇编错误，以整数退出码 n 终止 MARS |
+| mc | 设置内存配置。该选项有 1 个参数（例如 mc），参数区分大小写，可选值为：Default（默认 32 位地址空间）、CompactDataAtZero（32KB 地址空间，数据段位于地址 0）、CompactTextAtZero（32KB 地址空间，文本段位于地址 0） |
+
+若需调试上一个实验的程序，可使用如下命令行：
+java -jar Mars.jar nc 50000 ae2 mc CompactDataAtZero <你的汇编程序>.asm
+
+对比自身输出信息与 Mars 的输出信息，第一次出现不一致的行即为出错位置。
+
+## 提交
+1. 需提交所有自行编写的代码文件。
+2. 实验报告中仅需描述自身对流水线竞争的处理即可。
+
+测试程序可参考 ceerRep/pipeline-tester-py、Menci/pipeline-tester。
+
+Written with StackEdit.

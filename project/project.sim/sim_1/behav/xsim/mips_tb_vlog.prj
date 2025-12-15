@@ -1,0 +1,32 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../code/ALU.v" \
+"../../../../../code/BECtrl.v" \
+"../../../../../code/Comp.v" \
+"../../../../../code/Ctrl.v" \
+"../../../../../code/DM.v" \
+"../../../../../code/DMExt.v" \
+"../../../../../code/Ext.v" \
+"../../../../../code/Hazard.v" \
+"../../../../../code/IM.v" \
+"../../../../../code/MUX.v" \
+"../../../../../code/NPC.v" \
+"../../../../../code/PC.v" \
+"../../../../../code/RegD.v" \
+"../../../../../code/RegE.v" \
+"../../../../../code/RegFile.v" \
+"../../../../../code/RegM.v" \
+"../../../../../code/RegW.v" \
+"../../../../../code/StartCtrl.v" \
+"../../../../../code/TopLevel.v" \
+
+sv xil_defaultlib  \
+"../../../../../code/MDU.sv" \
+"../../../../../code/MIPS.v" \
+"../../../../../code/MIPS_TB.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

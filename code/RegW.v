@@ -10,8 +10,10 @@ module RegW(									//MEM / WB 阶段的寄存器，根据 MEM 阶段时的状�
   input               IsJJalM,
   input               IsJrJalrM,
   input               IsUnsignedM,
+  input               IsSyscallM,
   input       [3:0]   BEOutM,
   output  reg [31:0]  PCPlus8W,
+  output  reg [31:0]  PCW,
   output  reg [31:0]  ALUOutW,
   output  reg [31:0]  ReadDataW,
   output  reg [4:0]   WriteRegW,
@@ -20,12 +22,14 @@ module RegW(									//MEM / WB 阶段的寄存器，根据 MEM 阶段时的状�
   output  reg         IsJJalW,
   output  reg         IsJrJalrW,
   output  reg         IsUnsignedW,
+  output  reg         IsSyscallW,
   output  reg [3:0]   BEOutW
   );
   
   initial
   begin
     PCPlus8W    <= 0;
+    PCW         <= 0;
     ALUOutW     <= 0;
     ReadDataW   <= 0;
     WriteRegW   <= 0;
@@ -34,6 +38,7 @@ module RegW(									//MEM / WB 阶段的寄存器，根据 MEM 阶段时的状�
     IsJJalW     <= 0;
     IsJrJalrW   <= 0;
     IsUnsignedW <= 0;
+    IsSyscallW  <= 0;
     BEOutW      <= 0;
   end
   
@@ -42,6 +47,7 @@ module RegW(									//MEM / WB 阶段的寄存器，根据 MEM 阶段时的状�
     if (rst)
     begin
       PCPlus8W    <= 0;
+      PCW         <= 0;
       ALUOutW     <= 0;
       ReadDataW   <= 0;
       WriteRegW   <= 0;
@@ -50,11 +56,13 @@ module RegW(									//MEM / WB 阶段的寄存器，根据 MEM 阶段时的状�
       IsJJalW     <= 0;
       IsJrJalrW   <= 0;
       IsUnsignedW <= 0;
+      IsSyscallW  <= 0;
       BEOutW      <= 0;
     end
     else
     begin
       PCPlus8W    <= PCPlus8M;
+      PCW         <= (PCPlus8M >= 32'd8) ? (PCPlus8M - 32'd8) : 32'd0;
       ALUOutW     <= ALUOutM;
       ReadDataW   <= ReadDataM;
       WriteRegW   <= WriteRegM;
@@ -63,6 +71,7 @@ module RegW(									//MEM / WB 阶段的寄存器，根据 MEM 阶段时的状�
       IsJJalW     <= IsJJalM;
       IsJrJalrW   <= IsJrJalrM;
       IsUnsignedW <= IsUnsignedM;
+      IsSyscallW  <= IsSyscallM;
       BEOutW      <= BEOutM;
     end
   end

@@ -13,6 +13,7 @@ module RegM(							//EX / MEM 阶段的寄存器，根据 EX 阶段时的状态�
   input               IsLbSbE,
   input               IsLhShE,
   input               IsUnsignedE,
+  input               IsSyscallE,
   output  reg [31:0]  PCPlus8M,
   output  reg [31:0]  ALUOutM,
   output  reg [31:0]  WriteDataM,
@@ -24,7 +25,8 @@ module RegM(							//EX / MEM 阶段的寄存器，根据 EX 阶段时的状态�
   output  reg         IsJrJalrM,
   output  reg         IsLbSbM,
   output  reg         IsLhShM,
-  output  reg         IsUnsignedM
+  output  reg         IsUnsignedM,
+  output  reg         IsSyscallM
   );
   
   initial
@@ -42,6 +44,7 @@ module RegM(							//EX / MEM 阶段的寄存器，根据 EX 阶段时的状态�
     IsLbSbM     <= 0;
     IsLhShM     <= 0;
     IsUnsignedM <= 0;
+    IsSyscallM  <= 0;
   end
   
   always @(posedge clk)
@@ -61,6 +64,7 @@ module RegM(							//EX / MEM 阶段的寄存器，根据 EX 阶段时的状态�
       IsLbSbM     <= 0;
       IsLhShM     <= 0;
       IsUnsignedM <= 0;
+      IsSyscallM  <= 0;
     end
     else
     begin
@@ -77,6 +81,7 @@ module RegM(							//EX / MEM 阶段的寄存器，根据 EX 阶段时的状态�
       IsLbSbM     <= IsLbSbE;
       IsLhShM     <= IsLhShE;
       IsUnsignedM <= IsUnsignedE;
+      IsSyscallM  <= IsSyscallE;
     end
   end
   

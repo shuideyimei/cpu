@@ -18,6 +18,7 @@ module RegE(										//ID / EX阶段的寄存器，根据ID阶段时的状态�
   input               HiLoWriteD,					//ID阶段写入HI/LO寄存器的信息
   input               HiLoD,
   input               IsShamtD,
+  input               IsSyscallD,
   input       [1:0]   MdOpD,
   output  reg [31:0]  PCPlus8E,
   output  reg [31:0]  SrcA2E, SrcB2E,
@@ -36,6 +37,7 @@ module RegE(										//ID / EX阶段的寄存器，根据ID阶段时的状态�
   output  reg         HiLoWriteE,
   output  reg         HiLoE,
   output  reg         IsShamtE,
+  output  reg         IsSyscallE,
   output  reg [1:0]   MdOpE
   );
   
@@ -64,6 +66,7 @@ module RegE(										//ID / EX阶段的寄存器，根据ID阶段时的状态�
     HiLoWriteE  <= 0;
     HiLoE       <= 0;
     IsShamtE    <= 0;
+    IsSyscallE  <= 0;
     MdOpE       <= 0;
   end
   
@@ -94,11 +97,12 @@ module RegE(										//ID / EX阶段的寄存器，根据ID阶段时的状态�
       HiLoWriteE  <= 0;
       HiLoE       <= 0;
       IsShamtE    <= 0;
+      IsSyscallE  <= 0;
       MdOpE       <= 0;
     end
     else
     begin
-      PCPlus8E    <= PCPlus4D;
+      PCPlus8E    <= PCPlus4D + 4;
       SrcA2E       <= SrcA2D;
       SrcB2E       <= SrcB2D;
       RsE         <= RsD;
@@ -121,6 +125,7 @@ module RegE(										//ID / EX阶段的寄存器，根据ID阶段时的状态�
       HiLoWriteE  <= HiLoWriteD;
       HiLoE       <= HiLoD;
       IsShamtE    <= IsShamtD;
+      IsSyscallE  <= IsSyscallD;
       MdOpE       <= MdOpD;
     end
   end
