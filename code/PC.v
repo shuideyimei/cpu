@@ -27,30 +27,20 @@ module PC(
       JumpHold    <= 1'b0;
       JumpTarget  <= 32'b0;
     end
-    else if (JumpPending && En) begin
-      // 已经发放过唯一的延迟槽，且流水允许前进：本拍跳转
-      PCF         <= JumpTarget;
-      PCPlus4F    <= JumpTarget + 4;
-      JumpPending <= 1'b0;
-      JumpHold    <= 1'b1;   // 标记本次跳转已服务
-      JumpTarget  <= 32'b0;
-    end
-    else if (En && IsJBrD && !JumpHold) begin
-      // ID 级检测到跳转/分支：此时 IF 正在取延迟槽，保持 PC 不再顺序前进
-      PCF         <= PCF;       // 停在延迟槽地址
-      PCPlus4F    <= PCPlus4F;  // 保持
-      JumpPending <= 1'b1;      // 挂起跳转，下一拍执行
-      JumpTarget  <= NPCD;
-      // JumpHold 暂不置位，等真正跳转时置位
-    end
     else if (En) begin
-      // 普通顺序前进
-      PCF         <= PCF + 4;
-      PCPlus4F    <= PCF + 8;
+      if (IsJBrD) begin
+        // ID 级确认跳转/分支：PC 已经取到延迟槽，下一拍直接跳到目标
+        PCF         <= NPCD;
+        PCPlus4F    <= NPCD + 4;
+      end else begin
+        // 普通顺序前进
+        PCF         <= PCF + 4;
+        PCPlus4F    <= PCF + 8;
+      end
+      // 跳转状态在本实现已无需挂起，直接清零
       JumpPending <= 1'b0;
-      // 若当前不是跳转指令，允许下一次跳转触发
-      if (!IsJBrD)
-        JumpHold <= 1'b0;
+      JumpHold    <= 1'b0;
+      JumpTarget  <= 32'b0;
     end
     else begin
       // En=0：保持
