@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/project/project.sim/sim_1/behav/xsim/xsim.dir/mips_tb_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Mon Dec 15 19:43:20 2025" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Mon Dec 15 20:17:21 2025" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2018.3 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "2405991" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "fa01948c-7a01-4bb8-8d9c-d99f1c4914c8" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "e6f7202c585f498eb4e5ec9ab3b2b493" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "56" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "62" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Microsoft Windows 8 or later , 64-bit" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "13th Gen Intel(R) Core(TM) i9-13900HX" -context "user_environment"
@@ -27,7 +27,7 @@ webtalk_add_data -client xsim -key Command -value "xsim" -context "xsim\\command
 webtalk_add_data -client xsim -key trace_waveform -value "true" -context "xsim\\usage"
 webtalk_add_data -client xsim -key runtime -value "2000005 ns" -context "xsim\\usage"
 webtalk_add_data -client xsim -key iteration -value "0" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Time -value "1.06_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Simulation_Time -value "1.19_sec" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Simulation_Memory -value "16120_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 1987648524 -regid "" -xml E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/project/project.sim/sim_1/behav/xsim/xsim.dir/mips_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/project/project.sim/sim_1/behav/xsim/xsim.dir/mips_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/project/project.sim/sim_1/behav/xsim/xsim.dir/mips_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_transmit -clientid 3463818394 -regid "" -xml E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/project/project.sim/sim_1/behav/xsim/xsim.dir/mips_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/project/project.sim/sim_1/behav/xsim/xsim.dir/mips_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/project/project.sim/sim_1/behav/xsim/xsim.dir/mips_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate

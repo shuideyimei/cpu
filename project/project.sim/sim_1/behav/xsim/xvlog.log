@@ -1,0 +1,40 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/BECtrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BECtrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/Comp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Comp
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/Ctrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Ctrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/DM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DM_4k
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/DMExt.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DMExt
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/Ext.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Ext
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/Hazard.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Hazard
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/IM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IM_2k
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/MUX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX2
+INFO: [VRFC 10-311] analyzing module MUX3
+INFO: [VRFC 10-311] analyzing module MUX4
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/NPC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NPC
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/RegD.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegD
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/RegE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegE
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/RegFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/RegM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegM
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/RegW.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegW
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/StartCtrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module StartCtrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/CPU_Design/HFUT_2020_MIPS_CPU/code/TopLevel.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TopLevel
