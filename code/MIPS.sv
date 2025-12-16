@@ -1,6 +1,6 @@
-`include "MDU.SV"
+`include "MultiplicationDivisionUnit.SV"
 
-module MIPS(					//实例化以上各个模块，并将各模块用线连接起来
+module MIPS(					//实例化以上各个模块，并将各模块用线连接起�?
   input clk, rst
   );
   
@@ -76,7 +76,6 @@ module MIPS(					//实例化以上各个模块，并将各模块用线连接起�
 
   // Drive MDU operation based on EX stage control
   always @(*) begin
-    // Default to read LO to keep a deterministic value on Lo
     MDUOperationE = MDU_READ_LO;
     if (HiLoWriteE) begin
       // MTHI / MTLO
@@ -112,7 +111,6 @@ module MIPS(					//实例化以上各个模块，并将各模块用线连接起�
     .dataRead(MDUDataRead)
   );
 
-  // Expose HI / LO values for MFHI / MFLO selection (only used when selected by ALUSrcE)
   assign Lo = MDUDataRead;
   assign Hi = MDUDataRead;
   MUX2 #(5) WriteRegMUX(RdE, RtE, RegDstE, WriteRegE);
@@ -126,7 +124,6 @@ module MIPS(					//实例化以上各个模块，并将各模块用线连接起�
   BECtrl BECtrl(ALUOutM[1:0], IsLhShM, IsLbSbM, BEOutM);
   MUX2 #(32) ForwardMMUX(WriteDataM, ResultW, ForwardM, WriteData2M);
   wire [31:0] PCM;
-  // PCPlus8M now carries PC+4; subtract 4 to recover the instruction PC for DM log
   assign PCM = (PCPlus8M >= 32'd8) ? (PCPlus8M - 32'd8) : 32'd0;
   DM_4k DM(ALUOutM[11:2], WriteData2M, clk, MemWriteM, BEOutM, PCM, ReadDataM);
   
@@ -139,20 +136,11 @@ module MIPS(					//实例化以上各个模块，并将各模块用线连接起�
   MUX2 #(32) MemToRegMUX(ALUOutW, ReadDataExtW, MemToRegW, Result1W);
   MUX2 #(32) IsJMUX(Result1W, PCPlus8W, IsJJalW || IsJrJalrW, ResultW);
   
-  // No forwarding needed for Syscall in WB stage as it is the oldest instruction.
-  // Using forwarding would incorrectly pick up values from younger instructions in MEM/EX.
   assign V0Data = V0DataRaw;
   assign A0Data = A0DataRaw;
-  
-  // Syscall handling in WB stage
-  // Execute syscall when it reaches WB stage
-  // Note: V0Data and A0Data are combinational, computed from forwarding logic
+
   always @(posedge clk) begin
     if (!rst && IsSyscallW) begin
-      // Check syscall function code in $v0
-      // Debug: Print values to verify forwarding
-       $display("DEBUG: syscall at PC %h, V0Data=%d, A0Data=%d, ForwardA0=%b, WriteRegM=%d, WriteRegW=%d", 
-               PCW, V0Data, A0Data, ForwardA0, WriteRegM, WriteRegW);
       if (V0Data == 32'd10) begin
         // Syscall 10: Exit program
         $finish;

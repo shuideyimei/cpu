@@ -12,7 +12,7 @@ CODE_TEMP = os.path.join(os.path.dirname(__file__), "code.tmp")
 
 def mars_run(asm_filename: str, mars_run_params: List[str]) -> str:
     result = subprocess.run(
-        ["java", "-jar", MARS_PATH, *mars_run_params, asm_filename], capture_output=True
+        ["java", "-jar", MARS_PATH, asm_filename, *mars_run_params], capture_output=True
     )
 
     if len(result.stderr):
