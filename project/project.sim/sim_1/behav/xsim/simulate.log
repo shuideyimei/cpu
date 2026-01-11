@@ -1,3 +1,6 @@
+Vivado Simulator 2018.3
+Time resolution is 1 us
+WARNING: Too many words specified in data file code.txt
 @00003000: $31 <= 00003000
 @00003004: $ 0 <= e5320000
 @00003008: $ 0 <= 0000f7f5
@@ -25048,3 +25051,4 @@
 @00003190: $ 2 <= 8cc70000
 @00003198: $ 9 <= 00003000
 @00003188: $12 <= 00000001
+$finish called at time : 1000005 us : File "E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/mips_tb.v" Line 30

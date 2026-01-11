@@ -1,0 +1,6 @@
+{
+  "compiler": "vivado",
+  "test_file": "./project/project.xpr",
+  "data_path": "./project/project.srcs/sources_1/imports/src/DM.v",
+  "code_path": "./project/project.srcs/sources_1/imports/src/IM.v"
+}

@@ -10,165 +10,167 @@ data2: .space 4
 .text
 
 ori $31, $0, 0x3000
-lui $0, 29985
-ori $0, $0, 18832
-lui $1, 19369
-ori $1, $1, 61921
-lui $2, 49565
-ori $2, $2, 58068
-lui $3, 32910
-label1:
-ori $3, $3, 52542
-lui $4, 14351
-ori $4, $4, 23560
-lui $5, 57012
-ori $5, $5, 46491
-lui $6, 40771
-ori $6, $6, 25161
-lui $7, 3987
-ori $7, $7, 43884
-lui $8, 13993
-ori $8, $8, 15872
-lui $9, 36389
-ori $9, $9, 42161
-lui $10, 46939
-ori $10, $10, 61969
-lui $11, 47451
-ori $11, $11, 40358
-lui $12, 28280
-ori $12, $12, 31018
-lui $13, 6887
-ori $13, $13, 2650
-lui $14, 59772
-ori $14, $14, 51574
-lui $15, 46178
-ori $15, $15, 26565
-lui $16, 25596
-ori $16, $16, 62182
-lui $17, 35488
-ori $17, $17, 57825
-lui $18, 33369
-ori $18, $18, 49783
-lui $19, 7072
-ori $19, $19, 20571
-label4:
-sw $13, data0
-sw $31, data1
-sw $15, data2
-mflo $18
-div $16,$18
-mtlo $3
-add $0,$10,$15
-multu $15,$3
-sll $11,$9,27
-subu $11,$31,$3
-xor $13,$0,$12
-xori $13,$3,43499
-sw $7,data1
-nor $14,$10,$5
-mtlo $14
-andi $12,$12,2
-sh $19,data2($12)
-srav $11,$18,$11
-slt $3,$14,$7
-slt $18,$1,$4
-and $13,$10,$7
-andi $6,$6,3
-lbu $4,data0($6)
-xori $16,$15,3206
-addiu $4,$5,39118
-srav $2,$10,$19
-srav $14,$5,$14
-sll $15,$12,10
-mfhi $15
-sw $18,data0
-label5:
-sll $13,$11,17
-sltu $4,$19,$2
-addi $9,$1,59077
-xori $13,$12,30955
-andi $1,$1,2
-lh $12,data2($1)
-ori $16,$13,14636
-ori $5,$17,53884
-mflo $5
-andi $9,$9,3
-lbu $1,data2($9)
-andi $5,$5,2
-lh $16,data1($5)
-addi $6,$13,20158
-slt $3,$10,$5
-add $15,$18,$1
-div $1,$4
-sllv $18,$9,$0
-andi $4,$14,40784
-and $19,$5,$9
-divu $19,$3
-xor $18,$11,$4
-ori $17,$8,10998
-j label0
-mfhi $1
-sltiu $17,$3,2048
-sllv $9,$18,$1
-mfhi $6
-xor $11,$31,$4
-and $4,$19,$5
-label0:
-andi $8,$6,3932
-lw $16,data1
-sltu $2,$6,$3
-mthi $11
-bgez $8,label1
-sltiu $8,$31,17853
-mfhi $16
-srav $8,$6,$31
-ori $13,$14,3530
-j label4
-nor $1,$14,$18
-multu $8,$8
-sra $2,$13,6
-j label4
-lui $11,4696
-sllv $2,$0,$5
-bgez $3,label2
-andi $3,$3,3
-lb $9,data0($3)
-lui $8,4281
-addi $19,$18,34124
-lw $18,data2
-label6:
-divu $8,$3
-mult $17,$10
-andi $5,$5,3
-sb $12,data1($5)
-srlv $6,$13,$16
-jr $ra
-xori $16,$12,2255
-beq $5,$17,label0
-sltiu $12,$8,20195
-div $5,$11
-mult $13,$19
-lui $10,9239
-andi $3,$3,2
-lh $17,data0($3)
-mtlo $3
-mflo $3
-slti $10,$4,-18484
-andi $18,$18,56223
+lui $0, 15720
+ori $0, $0, 6435
+lui $1, 17778
+ori $1, $1, 21145
+lui $2, 16207
+ori $2, $2, 29858
+lui $3, 44663
+ori $3, $3, 27585
+lui $4, 40789
+ori $4, $4, 39360
+lui $5, 14312
+ori $5, $5, 40758
 label3:
-sltu $12,$31,$15
-srlv $15,$9,$8
-srav $10,$1,$0
-slt $0,$11,$19
-andi $11,$11,3
-lbu $7,data2($11)
-blez $6,label4
-andi $2,$2,2
-sh $7,data0($2)
-label2:
-mthi $5
-addi $9,$12,38484
+lui $6, 61929
+ori $6, $6, 56840
+lui $7, 61964
+ori $7, $7, 46591
+lui $8, 33457
+ori $8, $8, 37846
+lui $9, 33234
+ori $9, $9, 12005
+lui $10, 32968
+ori $10, $10, 9881
+lui $11, 31240
+ori $11, $11, 54159
+lui $12, 36568
+ori $12, $12, 17423
+lui $13, 18504
+ori $13, $13, 11559
+lui $14, 1652
+ori $14, $14, 41457
+lui $15, 58038
+ori $15, $15, 8843
+lui $16, 2370
+ori $16, $16, 26205
+lui $17, 7202
+ori $17, $17, 12682
+lui $18, 55352
+ori $18, $18, 34223
+lui $19, 62605
+ori $19, $19, 8001
+sw $8, data0
+sw $2, data1
+sw $13, data2
+addu $4,$8,$2
+mflo $7
+addiu $0,$19,24895
+addi $2,$18,35474
+ori $8,$14,1794
+label5:
+mtlo $19
+sra $5,$9,18
+mthi $13
+label0:
+add $15,$11,$5
+srlv $19,$19,$8
+srav $5,$12,$8
+subu $0,$16,$9
+andi $1,$1,3
+lbu $17,data1($1)
+addi $11,$3,54139
+slt $7,$11,$17
+srl $3,$0,2
+addiu $10,$6,42273
+sw $7,data2
+mflo $5
+sllv $8,$6,$0
+andi $19,$19,3
+sb $7,data2($19)
+or $13,$3,$14
+sltiu $4,$19,1086
+srlv $2,$9,$17
+sra $4,$15,12
+ori $19,$0,48636
+label1:
+slti $6,$19,-19962
+andi $13,$13,3
+lbu $12,data1($13)
+srlv $19,$4,$6
+lw $11,data0
+add $10,$18,$5
+sllv $15,$31,$6
+sltiu $19,$12,2052
+andi $12,$12,2
+lhu $17,data1($12)
+addi $4,$13,48770
+div $19,$18
 div $12,$5
-ori $18,$7,639
+andi $1,$1,3
+lb $5,data1($1)
+sw $1,data1
+srav $10,$18,$11
+div $10,$12
+blez $19,label1
+andi $5,$5,3
+lb $15,data2($5)
+or $14,$15,$3
+srlv $3,$9,$4
+sra $18,$6,3
+div $5,$6
+bgez $2,label3
+sltu $18,$19,$31
+mtlo $9
+nor $2,$13,$13
+label6:
+j label3
+addu $13,$10,$16
+srav $18,$8,$4
+bgez $12,label0
+sw $17,data0
+bgez $13,label0
+mfhi $14
+jal label1
+andi $9,$9,2
+lh $17,data0($9)
+add $0,$16,$9
+sub $0,$15,$10
+add $6,$0,$19
+add $3,$8,$15
+xor $4,$16,$12
+bltz $3,label3
+ori $6,$3,55790
+lw $3,data0
+xor $2,$1,$5
+j label2
+sub $12,$17,$4
+jal label4
+mthi $11
+j label6
+srl $8,$13,29
+sll $11,$0,9
+bne $9,$16,label5
+andi $13,$13,3
+lb $2,data1($13)
+andi $17,$17,3
+lb $11,data1($17)
+mult $9,$16
+xori $13,$15,28160
+mflo $4
+andi $5,$11,39369
+sub $7,$2,$13
+label2:
+label4:
+andi $7,$7,3
+sb $15,data1($7)
+srlv $1,$19,$4
+sllv $12,$17,$0
+srav $2,$0,$0
+srlv $1,$19,$17
+sll $9,$5,29
+sllv $0,$31,$11
+andi $12,$12,2
+lh $19,data2($12)
+addu $18,$16,$4
+mtlo $3
+sltiu $3,$31,10393
+div $8,$14
+slt $17,$4,$12
+andi $11,$11,3
+lbu $12,data0($11)
+addi $0,$0,38773
+divu $0,$2
 ori $v0, $0, 10
 syscall

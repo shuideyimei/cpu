@@ -1,1 +1,4 @@
-/project/
+.claude/
+.cursor/
+uv.lock
+report/

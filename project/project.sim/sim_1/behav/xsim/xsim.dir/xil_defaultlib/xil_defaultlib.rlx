@@ -1,0 +1,27 @@
+0.6
+2018.3
+Dec  7 2018
+00:33:28
+E:/Code/CPU_Design/MIPS_CPU/project/project.sim/sim_1/behav/xsim/glbl.v,1767609850,verilog,,,,glbl,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/ALU.v,1767609516,verilog,,E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/BECtrl.v,,ALU,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/BECtrl.v,1767609516,verilog,,E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/Comp.v,,BECtrl,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/Comp.v,1767609516,verilog,,E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/Ctrl.v,,Comp,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/Ctrl.v,1767609516,verilog,,E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/DM.v,,Ctrl,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/DM.v,1767616801,verilog,,E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/DMExt.v,,DM_4k,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/DMExt.v,1767609516,verilog,,E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/Ext.v,,DMExt,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/Ext.v,1767609516,verilog,,E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/Hazard.v,,Ext,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/Hazard.v,1767609516,verilog,,E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/IM.v,,Hazard,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/IM.v,1767620466,verilog,,E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/MUX.v,,IM_2k,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/MIPS.sv,1767609516,systemVerilog,E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/MultiplicationDivisionUnit.SV,,E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/MultiplicationDivisionUnit.SV,$unit_MIPS_sv;MIPS,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/MUX.v,1767609516,verilog,,E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/NPC.v,,MUX2;MUX3;MUX4,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/MultiplicationDivisionUnit.SV,1767609516,verilog,,,,MultiplicationDivisionUnit,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/NPC.v,1767609516,verilog,,E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/PC.v,,NPC,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/PC.v,1767609516,verilog,,E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/RegD.v,,PC,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/RegD.v,1767609516,verilog,,E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/RegE.v,,RegD,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/RegE.v,1767609516,verilog,,E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/RegFile.v,,RegE,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/RegFile.v,1767609516,verilog,,E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/RegM.v,,RegFile,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/RegM.v,1767609516,verilog,,E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/RegW.v,,RegM,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/RegW.v,1767609516,verilog,,E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/StartCtrl.v,,RegW,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/StartCtrl.v,1767609516,verilog,,E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/TopLevel.v,,StartCtrl,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/TopLevel.v,1767609516,verilog,,,,TopLevel,,,,,,,,
+E:/Code/CPU_Design/MIPS_CPU/project/project.srcs/sources_1/imports/src/mips_tb.v,1767609516,verilog,,,,mips_tb,,,,,,,,
