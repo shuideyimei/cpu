@@ -213,12 +213,7 @@ python check.py meta.json
 
 - [MIPS-C3 指令集手册](https://www.mips.com/)
 - [Hennessy & Patterson - Computer Organization and Design](https://www.elsevier.com/books/computer-organization-and-design/patterson/978-0-12-820331-6)
-- 合肥工业大学《系统硬件综合设计》课程实验要求
 
 ## 许可证
 
 本项目仅用于教学和学习目的。
-
----
-
-**注意**：本项目为合肥工业大学《系统硬件综合设计》课程作业，实现了支持 50 条指令的五级流水线 MIPS CPU。
